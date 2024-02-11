@@ -1,0 +1,52 @@
+Traceback (most recent call last):
+  File "/home/ubuntu/btc-trans/btc_price.py", line 85, in <module>
+    loop.run_until_complete(main())
+  File "/home/ubuntu/btc-trans/btc_env/lib/python3.10/site-packages/nest_asyncio.py", line 84, in run_until_complete
+    self._run_once()
+  File "/home/ubuntu/btc-trans/btc_env/lib/python3.10/site-packages/nest_asyncio.py", line 107, in _run_once
+    event_list = self._selector.select(timeout)
+  File "/usr/lib/python3.10/selectors.py", line 469, in select
+    fd_event_list = self._selector.poll(timeout, max_ev)
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "upload_to_s3.py", line 34, in <module>
+    s3.upload_file(file_path, bucket_name, f"{folder_prefix}{folders_names[1]}/{folders_names[3]}/{folders_names[2]}/{folders_names[4]}")
+  File "/usr/local/lib/python3.8/site-packages/boto3/s3/inject.py", line 143, in upload_file
+    return transfer.upload_file(
+  File "/usr/local/lib/python3.8/site-packages/boto3/s3/transfer.py", line 292, in upload_file
+    future.result()
+  File "/usr/local/lib/python3.8/site-packages/s3transfer/futures.py", line 103, in result
+    return self._coordinator.result()
+  File "/usr/local/lib/python3.8/site-packages/s3transfer/futures.py", line 266, in result
+    raise self._exception
+  File "/usr/local/lib/python3.8/site-packages/s3transfer/tasks.py", line 139, in __call__
+    return self._execute_main(kwargs)
+  File "/usr/local/lib/python3.8/site-packages/s3transfer/tasks.py", line 162, in _execute_main
+    return_value = self._main(**kwargs)
+  File "/usr/local/lib/python3.8/site-packages/s3transfer/upload.py", line 758, in _main
+    client.put_object(Bucket=bucket, Key=key, Body=body, **extra_args)
+  File "/usr/local/lib/python3.8/site-packages/botocore/client.py", line 530, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/usr/local/lib/python3.8/site-packages/botocore/client.py", line 947, in _make_api_call
+    http, parsed_response = self._make_request(
+  File "/usr/local/lib/python3.8/site-packages/botocore/client.py", line 970, in _make_request
+    return self._endpoint.make_request(operation_model, request_dict)
+  File "/usr/local/lib/python3.8/site-packages/botocore/endpoint.py", line 119, in make_request
+    return self._send_request(request_dict, operation_model)
+  File "/usr/local/lib/python3.8/site-packages/botocore/endpoint.py", line 198, in _send_request
+    request = self.create_request(request_dict, operation_model)
+  File "/usr/local/lib/python3.8/site-packages/botocore/endpoint.py", line 134, in create_request
+    self._event_emitter.emit(
+  File "/usr/local/lib/python3.8/site-packages/botocore/hooks.py", line 412, in emit
+    return self._emitter.emit(aliased_event_name, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/botocore/hooks.py", line 256, in emit
+    return self._emit(event_name, kwargs)
+  File "/usr/local/lib/python3.8/site-packages/botocore/hooks.py", line 239, in _emit
+    response = handler(**kwargs)
+  File "/usr/local/lib/python3.8/site-packages/botocore/signers.py", line 105, in handler
+    return self.sign(operation_name, request)
+  File "/usr/local/lib/python3.8/site-packages/botocore/signers.py", line 189, in sign
+    auth.add_auth(request)
+  File "/usr/local/lib/python3.8/site-packages/botocore/auth.py", line 418, in add_auth
+    raise NoCredentialsError()
+botocore.exceptions.NoCredentialsError: Unable to locate credentials
